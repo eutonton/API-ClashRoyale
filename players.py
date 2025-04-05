@@ -18,7 +18,7 @@ def buscar_info_jogador(player_tag):
     response = requests.get(url, headers=headers)
 
     if response.status_code != 200:
-        print("❌ Erro ao buscar jogador:", response.status_code, response.text)
+        print("Erro ao buscar jogador:", response.status_code, response.text)
         return
 
     dados = response.json()
@@ -39,7 +39,7 @@ def buscar_info_jogador(player_tag):
 
 # === EXECUÇÃO ===
 if __name__ == "__main__":
-    print("=== 🎯 Consulta e Inserção de Jogador ===")
+    print("=== Consulta e Inserção de Jogador ===")
     tag = input("Digite o playerTag (ex: #8UQY9V09): ").strip().upper()
     tag_formatado = tag.replace("#", "%23")
 
