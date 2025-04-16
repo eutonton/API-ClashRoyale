@@ -13,7 +13,7 @@ headers = {
 }
 
 #Conexão com o MongoDB
-client = MongoClient('Conexão com Cluster')
+client = MongoClient('mongodb+srv://jwellington427:Araujo02%23@cluster0.jorwm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 db = client.db_clash_royale 
 colecao_cartas = db.cartas 
 

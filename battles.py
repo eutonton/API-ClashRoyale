@@ -6,7 +6,7 @@ from datetime import datetime
 API_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImQwYzY3OGYxLWYyNTYtNDBjNy04ODE0LTBkNzI2Y2VmMWNkZSIsImlhdCI6MTc0Mzc5MjEzMywic3ViIjoiZGV2ZWxvcGVyLzNmM2VlMjBiLTg0YTItOTBkMi04MzI2LWFhOTAwZDY2YjUyZiIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxNjguMTk2LjQxLjgiXSwidHlwZSI6ImNsaWVudCJ9XX0.BAtVDj4pxGsB-Leg4b-6_Ks8OoDTukhY5jUrmXki1j4V8a8LRXSXgTbLpGzLm9c9X3bqN-Vpk8Ctihy_2oRLjw'
 
 # Conexão MongoDB
-client = MongoClient('Conexão com Cluster')
+client = MongoClient('mongodb+srv://jwellington427:Araujo02%23@cluster0.jorwm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 db = client.db_clash_royale
 colecao_batalhas = db.batalhas
 
@@ -26,7 +26,7 @@ def buscar_batalhas(player_tag):
 
     colecao_batalhas.delete_many({"playerTag": player_tag})  # Limpa anteriores
 
-    for idx, batalha in enumerate(batalhas[:3], 1):  # Puxar últimas 3
+    for idx, batalha in enumerate(batalhas[:10], 1):  # Puxar últimas 3
         tempo = datetime.strptime(batalha["battleTime"], "%Y%m%dT%H%M%S.000Z")
         time_1 = batalha["team"][0]
         time_2 = batalha["opponent"][0]
