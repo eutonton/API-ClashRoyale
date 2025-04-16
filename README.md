@@ -7,7 +7,7 @@ Este projeto realiza a integração com a **API oficial do Clash Royale** para c
 
 ## 📁 Estrutura do Projeto
 
-- `players.py`: Retorna os dados relacionadas ao jogador ela tag e salva no MongoDB.
+- `players.py`: Retorna os dados relacionadas ao jogador pela tag e salva no MongoDB.
 - `battles.py`: Busca o histórico de batalhas de um jogador pela tag e salva no MongoDB.
 - `cards.py`: Lista todas as cartas disponíveis no jogo e salva no MongoDB.
 
